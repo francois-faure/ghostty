@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run the development build of Ghostty on a non-NixOS system.
+# Run the development build of Shiryu on a non-NixOS system.
 #
 # The build is linked against Nix's libraries, so the system's Mesa drivers
 # can't be loaded into it. Point it at the Mesa from the same Nix package set
@@ -18,4 +18,4 @@ export GBM_BACKENDS_PATH="$mesa/lib/gbm"
 # Run the binary directly rather than inside `nix develop`: the binary already
 # finds its libraries through its runpath, while the dev shell's
 # LD_LIBRARY_PATH would leak into every program started from the terminal.
-exec ./zig-out/bin/ghostty "$@"
+exec ./zig-out/bin/shiryu "$@"
